@@ -1,0 +1,71 @@
+<!-- <div class="alert alert-succes">
+    Cart detail component
+</div> -->
+<navbar></navbar>
+
+    <div class="container pt-100 mb-5">
+        <h1 class="mb-2">Sebetiniz</h1>
+        <div class="row">
+            <div class="col-8">
+                <ng-container *ngIf="cart.itemCount>0"></ng-container>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Cihaz</th>
+                            <th>Qiymet</th>
+                            <th>Miqdar</th>
+                            <th>Toplam qiymet</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr *ngFor="let item of cart.items">
+                            <td>
+                                <img src="assets/img/{{item.product.imageUrl}}" width="80"  alt="">
+                            </td>
+                            <td>{{item.product.name}}</td>
+                            <td>{{item.product.price}} AZN</td>
+                            <td><input type="text" class="form-control" [value]="item.quantity" (change)="cart.updateQuantity(item.product,$event.target.value) "style="width:50px;"></td>
+                            <td>{{item.quantity * item.product.price}} AZN</td>
+                            <td> <button class="btn btn-danger btn-sm" (click)="cart.removeItem(item.product.id)"><i class="fa fa-times fa-fw"></i></button></td>
+
+
+                        </tr> -->
+                        <tr *ngFor="let item of cart.items">
+                            <td>
+                                <img src="assets/img/{{item.product.imageUrl}}" width="80"  alt="">
+                            </td>
+                            <td>{{item.product.name}}</td>
+                            <td>{{item.product.price}} AZN</td>
+                            <td><input type="text" class="form-control" [value]="item.quantity" (change)="cart.updateQuantity(item.product,$event.target.value)" style="width:50px;"></td>
+                            <td>{{item.quantity * item.product.price}} AZN</td>
+                            <td> <button class="btn btn-danger btn-sm" (click)="cart.removeItem(item.product.id)"><i class="fa fa-times fa-fw"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ng-container *ngIf="cart.itemCount==0"><div class="alert alert-warning mt-3"> Sebetenizde cihaz yoxdur! <br> <button  routerLink="shop" class="btn btn-link p-0">Cihaz al! </button></div></ng-container>
+
+                
+
+            </div>
+            <div class="col-4">
+                <ng-container *ngIf="cart.itemCount>0">
+                    <div class="text-left">
+                    <h4>Aldiqlariniz</h4>
+                </div>
+                <table class="table"><tbody>
+                    <tr>
+                    <th>Toplam</th>
+                    <td>{{cart.total}} AZN</td>
+                </tr>
+            </tbody>
+        </table>
+        <button routerLink="shop" class="btn btn-primary btn-sm ">Alisverise Davam Ele</button>
+        <button routerLink="checkout" class="btn btn-primary btn-sm ">Alisverise Davam Ele</button>
+                </ng-container>
+                
+                
+            </div>
+        </div>
+    </div>

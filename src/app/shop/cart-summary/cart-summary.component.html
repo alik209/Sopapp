@@ -1,0 +1,8 @@
+<div class="alert alert-success">
+<span *ngIf="cart.itemCount>0">    
+Sebetinizde {{cart.itemCount}} eded cihaz var <br>
+Mebleg {{cart.total}} AZN
+</span>
+<span *ngIf="cart.itemCount==0"> Sebetinizde cihaz yoxdur</span> 
+</div>
+{{cart.total}}
